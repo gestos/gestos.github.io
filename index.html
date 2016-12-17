@@ -1,6 +1,17 @@
 <html>
 <body>
-Very clean page
+	Very clean page<br>
+
+	<a href="http://chschneider.eu/linux/server/cups.shtml">This</a> guide to set up the server (has been fine already).<br>
+	for the client I really only need to fill the /etc/cups/client.conf with a single "ServerName $printserver:631" line!<br>
+	no cups server needs to run on the client machine.<br>
+
+	What I've been missing on gentoo is to set the "cups" flag for gtk+. That's why firefox wouldn't show the printer, although 'lpstat -t' clearly did.<br>
+	recompile with cups flag was the solution.
+
+
+
+
 
 </body>
 
