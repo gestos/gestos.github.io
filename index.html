@@ -1,21 +1,74 @@
 <html>
-<body>
-	Very clean page<br>
 
-	<a href="http://chschneider.eu/linux/server/cups.shtml">This</a> guide to set up the server (has been fine already).<br>
-	for the client I really only need to fill the /etc/cups/client.conf with a single "ServerName $printserver:631" line!<br>
-	no cups server needs to run on the client machine.<br>
+	<head>
+		<script src="functions.js"></script>
+	
+	</head>
+	<body>
+		<form onsubmit="calculate_overall(); return false";>
+			<label for="nuller_pg">Nullerbasis PG</label>
+			<input id="nuller_pg" type="text" value="70" />
+			<label for="nuller_vg">Nullerbasis VG</label>
+			<input id="nuller_vg" type="text" value="30" />
+			<label for="nuller_nic">Nullerbasis Nikotin mg/ml</label>
+			<input id="nuller_nic" type="text" value="0"/>
+			<br>
+			<label for="nicbase_pg">PG Nikotinbase</label>
+			<input id="nicbase_pg" type="text" value="50" />
+			<label for="nicbase_vg">VG Nikotinbase</label>
+			<input id="nicbase_vg" type="text" value="50" />
+			<label for="nicbase_nic">Nikotin Nikotinbase mg/ml</label>
+			<input id="nicbase_nic" type="text" value="40"/>
+			<br>
+			<label for="aromaprozent">Prozent Aroma</label>
+			<input id="aromaprozent" type="text" value="4" />
+			<label for="aroma_pg">PG Aroma</label>
+			<input id="aroma_pg" type="text" value="100" />
+			<label for="aroma_vg">VG Aroma</label>
+			<input id="aroma_vg" type="text" value="0" />
+			<br>
+			<label for="Gesamtmenge">Gesamtmenge</label>
+			<input id="Gesamtmenge" type="text" />
+			<br>
+			<label for="sollnic">gewuenschte Nikotinmenge Liquid:</label>
+			<input id="sollnic" type="text" />
+			<br>
+			<input id="rechnen" type="submit" value="jetzt berechnen" />
+		</form>
+		<br>
+		<br>
+		<table>
+			<tr>
+				<td>Nullerbase: </td> <td>Nicbase: </td> <td>Aroma: </td> <td>Liquid PG: </td> <td>Liquid VG: </td>
+			</tr>
+			<tr>
+				<td id="nulbase_ml"></td> <td id="nicbase_ml"></td> <td id="aroma_ml"></td> <td id="end_pg"></td> <td id="end_vg"></td>
+			</tr>
+			<table>
+				<tr>
+					<td>Flasche Nullerbase:</td> <td>Flasche Nicotinbase:</td> <td>Flasche Aroma:</td>
+				</tr>
+				<tr>
+					<td id="einzel_null"></td> <td id="einzel_nico"></td>	<td id="einzel_arom"></td>
+				</tr>
 
-	What I've been missing on gentoo is to set the "cups" flag for gtk+. That's why firefox wouldn't show the printer, although 'lpstat -t' clearly did.<br>
-	recompile with cups flag was the solution.
+
+			<form onsubmit="calculate_single(); return false";>
+				<label for="Einzelmenge">Einzelmenge:</label>
+				<input id="Einzelmenge" type="text" />
+				<input id="rechnen_einzel" type="submit" value="jetzt berechnen" />
+			</form>
+			
+			<br>
+
+			<form onsubmit="calculate_arome(); return false";>
+				<input id="aroma1" type="text" />
+				<input id="aroma2" type="text" />
+				<input id="aroma3" type="text" />
+				<input id="aroma4" type="text" />
+				<input id="reche_aroma" type="submit" value="aromen berechnen" />
+			</form>
 
 
-
-
-
-</body>
-
-
-
-
+	</body>
 </html>
