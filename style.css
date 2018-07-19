@@ -1,0 +1,18 @@
+body {
+	background-color: #c3dbf0;
+}
+
+.tabellen {
+	table-layout: fixed;
+	width: 70%;
+	border: solid .5px;
+	padding: 15px;
+	background-color: #e3d3f2;
+}
+.tabellen thead {
+	text-align: left;
+}
+
+#ergebniszeile {
+	color: #031a6b;
+}

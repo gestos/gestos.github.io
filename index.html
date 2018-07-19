@@ -1,75 +1,86 @@
 <html>
 
 	<head>
+		<meta charset="utf-8"/>
+		<link href="style.css" type="text/css" rel="stylesheet" />
 		<script src="functions.js"></script>
-	
 	</head>
+
+
 	<body>
 		<form onsubmit="calculate_overall(); return false";>
-			<label for="nuller_pg">Nullerbasis PG</label>
-			<input id="nuller_pg" type="text" value="70" />
-			<label for="nuller_vg">Nullerbasis VG</label>
-			<input id="nuller_vg" type="text" value="30" />
-			<label for="nuller_nic">Nullerbasis Nikotin mg/ml</label>
-			<input id="nuller_nic" type="text" value="0"/>
-			<br>
-			<label for="nicbase_pg">PG Nikotinbase</label>
-			<input id="nicbase_pg" type="text" value="50" />
-			<label for="nicbase_vg">VG Nikotinbase</label>
-			<input id="nicbase_vg" type="text" value="50" />
-			<label for="nicbase_nic">Nikotin Nikotinbase mg/ml</label>
-			<input id="nicbase_nic" type="text" value="40"/>
-			<br>
-			<label for="aromaprozent">Prozent Aroma</label>
-			<input id="aromaprozent" type="text" value="4" />
-			<label for="aroma_pg">PG Aroma</label>
-			<input id="aroma_pg" type="text" value="100" />
-			<label for="aroma_vg">VG Aroma</label>
-			<input id="aroma_vg" type="text" value="0" />
-			<br>
-			<label for="Gesamtmenge">Gesamtmenge</label>
-			<input id="Gesamtmenge" type="text" />
-			<br>
-			<label for="sollnic">gewuenschte Nikotinmenge Liquid:</label>
-			<input id="sollnic" type="text" />
-			<br>
-			<input id="rechnen" type="submit" value="jetzt berechnen" />
-		</form>
-		<br>
-		<br>
-		<table>
-			<tr>
-				<td>Nullerbase: </td> <td>Nicbase: </td> <td>Aroma: </td> <td>Liquid PG: </td> <td>Liquid VG: </td>
-			</tr>
-			<tr>
-				<td id="nulbase_ml"></td> <td id="nicbase_ml"></td> <td id="aroma_ml"></td> <td id="end_pg"></td> <td id="end_vg"></td>
-			</tr>
+			<table class="tabellen">
+				<tr>
+					<td>Nullerbasis</td>
+					<td><input id="nuller_pg" type="text" value="70" size="5" /><label for="nuller_pg">% PG</label> </td>
+					<td><input id="nuller_vg" type="text" value="30" size="5" /><label for="nuller_vg">% VG</label>	</td>
+					<td><input id="nuller_nic" type="text" value="0" size="5" /><label for="nuller_nic">mg Nic./ml</label> </td>
+				</tr>
+				<tr>
+					<td>Nikotinbasis</td>
+					<td><input id="nicbase_pg" type="text" value="50" size="5" /><label for="nicbase_pg">% PG</label></td>
+					<td><input id="nicbase_vg" type="text" value="50" size="5" /><label for="nicbase_vg">% VG</label></td>
+					<td><input id="nicbase_nic" type="text" value="40" size="5" /><label for="nicbase_nic">mg Nic./ml</label></td>
+				</tr>
+				<tr>
+					<td>Aroma</td>
+					<td><input id="aromaprozent" type="text" value="4" size="5" /><label for="aromaprozent">%</label></td>
+					<td><input id="aroma_pg" type="text" value="100" size="5" /><label for="aroma_pg">% PG</label></td>
+					<td><input id="aroma_vg" type="text" value="0" size="5" /><label for="aroma_vg">% VG</label></td>
+				</tr>
+				<tr>
+					<td>Gesamtmenge</td>
+					<td><input id="Gesamtmenge" type="text" size="6" /><label for="Gesamtmenge">ml</label></td>
+					<td><input id="sollnic" type="text" size="5" /><label for="sollnic">mg/ml Nic.</label></td>
+					<td><input id="rechnen" type="submit" value="jetzt berechnen" /></td>
+				</tr>
 			</table>
+
+			<table class="tabellen" id="ausgabe_gesamt">
+				<thead>
+				<tr>
+					<th>Ergebnis</th> <th>Nullerbase: </th> <th>Nicbase: </th> <th>Aroma: </th> <th>Liquid PG: </th> <th>Liquid VG: </th>
+				</tr>
+				</thead>
+				<tr id="ergebniszeile">
+					<td></td><td id="nulbase_ml">-</td> <td id="nicbase_ml">-</td> <td id="aroma_ml">-</td> <td id="end_pg">-</td> <td id="end_vg">-</td>
+				</tr>
+			</table>
+		</form>
+
+		<form onsubmit="calculate_single(); return false";>
+			<label for="Einzelmenge">Einzelmenge:</label>
+			<input id="Einzelmenge" type="text" size="5" />
+			<br>
+			<label for="aroma1">Aroma 1 %:</label>
+			<input id="aroma1" type="text" size="5" />
+			<label for="aroma2">Aroma 2 %:</label>
+			<input id="aroma2" type="text" size="5" />
+			<label for="aroma3">Aroma 3 %:</label>
+			<input id="aroma3" type="text" size="5" />
+			<label for="aroma4">Aroma 4 %:</label>
+			<input id="aroma4" type="text" size="5" />
+			<br>
+			<input id="rechnen_einzel" type="submit" value="jetzt berechnen" />
+		</form>
+
 		<table>
-				<tr>
-					<td>Flasche Nullerbase:</td> <td>Flasche Nicotinbase:</td> <td>Flasche Aroma:</td>
-				</tr>
-				<tr>
-					<td id="einzel_null"></td> <td id="einzel_nico"></td>	<td id="einzel_arom"></td>
-				</tr>
+			<tr>
+				<td>Flasche Nullerbase:</td> <td>Flasche Nicotinbase:</td> <td>Flasche Aroma:</td>
+			</tr>
+			<tr>
+				<td id="einzel_null"></td> <td id="einzel_nico"></td>	<td id="einzel_arom"></td>
+			</tr>
 		</table>
 
-
-			<form onsubmit="calculate_single(); return false";>
-				<label for="Einzelmenge">Einzelmenge:</label>
-				<input id="Einzelmenge" type="text" />
-				<input id="rechnen_einzel" type="submit" value="jetzt berechnen" />
-			</form>
-			
-			<br>
-
-			<form onsubmit="calculate_arome(); return false";>
-				<input id="aroma1" type="text" />
-				<input id="aroma2" type="text" />
-				<input id="aroma3" type="text" />
-				<input id="aroma4" type="text" />
-				<input id="reche_aroma" type="submit" value="aromen berechnen" />
-			</form>
+		<table>
+			<tr>
+				<td id="aroma1_ml"></td>
+				<td id="aroma2_ml"></td>
+				<td id="aroma3_ml"></td>
+				<td id="aroma4_ml"></td>
+			</tr>
+		</table>
 
 
 	</body>
