@@ -52,9 +52,9 @@ calculate_single = function() {
 	var aromaml = parseFloat((gesamtmenge/100)*aroma_pct);
 	var nulbaseml = parseFloat((gesamtmenge - aromaml) - nicml);
 
-	document.getElementById('einzel_null').innerHTML = parseFloat(nulbaseml*Faktor); 
-	document.getElementById('einzel_nico').innerHTML = parseFloat(nicml*Faktor); 
-	document.getElementById('einzel_arom').innerHTML = parseFloat(aromaml*Faktor); 
+	document.getElementById('einzel_null').innerHTML = parseFloat(nulbaseml*Faktor)+' ml'; 
+	document.getElementById('einzel_nico').innerHTML = parseFloat(nicml*Faktor)+' ml'; 
+	document.getElementById('einzel_arom').innerHTML = parseFloat(aromaml*Faktor)+' ml'; 
 
 	var pct1 = parseInt(document.getElementById('aroma1').value);
 	var pct2 = parseInt(document.getElementById('aroma2').value);
@@ -64,13 +64,17 @@ calculate_single = function() {
 	prct_check = parseInt(pct1+pct2+pct3+pct4)
 
 	if (prct_check !== 100) {
-		window.alert(prct_check);
-		window.alert('sollte 100% sein');
+		window.alert('sollte 100% sein, ist '+prct_check);
 		return false;
 	}
 
-	document.getElementById('aroma1_ml').innerHTML = parseFloat((aromaml*Faktor)*(pct1/100)); 
-	document.getElementById('aroma2_ml').innerHTML = parseFloat((aromaml*Faktor)*(pct2/100)); 
-	document.getElementById('aroma3_ml').innerHTML = parseFloat((aromaml*Faktor)*(pct3/100)); 
-	document.getElementById('aroma4_ml').innerHTML = parseFloat((aromaml*Faktor)*(pct4/100)); 
+	var ml1 = parseFloat((aromaml*Faktor)*(pct1/100));
+	var ml2 = parseFloat((aromaml*Faktor)*(pct2/100));
+	var ml3 = parseFloat((aromaml*Faktor)*(pct3/100));
+	var ml4 = parseFloat((aromaml*Faktor)*(pct4/100));
+
+	document.getElementById('aroma1_ml').innerHTML = ml1+' ml'; 
+	document.getElementById('aroma2_ml').innerHTML = ml2+' ml'; 
+	document.getElementById('aroma3_ml').innerHTML = ml3+' ml'; 
+	document.getElementById('aroma4_ml').innerHTML = ml4+' ml'; 
 }

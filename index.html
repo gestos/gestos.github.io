@@ -9,7 +9,12 @@
 
 	<body>
 		<form onsubmit="calculate_overall(); return false";>
-			<table class="tabellen">
+			<table class="tabellen color1">
+				<thead style="text-align: center">
+					<tr>
+						<th colspan="4">Grundmenge / Basen fuer Session</th>
+					</tr>
+				</thead>
 				<tr>
 					<td>Nullerbasis</td>
 					<td><input id="nuller_pg" type="text" value="70" size="5" /><label for="nuller_pg">% PG</label> </td>
@@ -28,60 +33,73 @@
 					<td><input id="aroma_pg" type="text" value="100" size="5" /><label for="aroma_pg">% PG</label></td>
 					<td><input id="aroma_vg" type="text" value="0" size="5" /><label for="aroma_vg">% VG</label></td>
 				</tr>
-				<tr>
+				<tr class="eingabezeile">
 					<td>Gesamtmenge</td>
 					<td><input id="Gesamtmenge" type="text" size="6" /><label for="Gesamtmenge">ml</label></td>
 					<td><input id="sollnic" type="text" size="5" /><label for="sollnic">mg/ml Nic.</label></td>
-					<td><input id="rechnen" type="submit" value="jetzt berechnen" /></td>
+					<td style="text-align: right"><input id="rechnen" type="submit" value="jetzt berechnen" /></td>
 				</tr>
 			</table>
 
 			<table class="tabellen" id="ausgabe_gesamt">
 				<thead>
-				<tr>
-					<th>Ergebnis</th> <th>Nullerbase: </th> <th>Nicbase: </th> <th>Aroma: </th> <th>Liquid PG: </th> <th>Liquid VG: </th>
-				</tr>
+					<tr>
+						<th>Ergebnis</th> <th>Nullerbase: </th> <th>Nicbase: </th> <th>Aroma: </th> <th>Liquid PG: </th> <th>Liquid VG: </th>
+					</tr>
 				</thead>
-				<tr id="ergebniszeile">
+				<tr class="ergebniszeile">
 					<td></td><td id="nulbase_ml">-</td> <td id="nicbase_ml">-</td> <td id="aroma_ml">-</td> <td id="end_pg">-</td> <td id="end_vg">-</td>
 				</tr>
 			</table>
 		</form>
 
 		<form onsubmit="calculate_single(); return false";>
-			<label for="Einzelmenge">Einzelmenge:</label>
-			<input id="Einzelmenge" type="text" size="5" />
-			<br>
-			<label for="aroma1">Aroma 1 %:</label>
-			<input id="aroma1" type="text" size="5" />
-			<label for="aroma2">Aroma 2 %:</label>
-			<input id="aroma2" type="text" size="5" />
-			<label for="aroma3">Aroma 3 %:</label>
-			<input id="aroma3" type="text" size="5" />
-			<label for="aroma4">Aroma 4 %:</label>
-			<input id="aroma4" type="text" size="5" />
-			<br>
-			<input id="rechnen_einzel" type="submit" value="jetzt berechnen" />
+			<table class="tabellen color2">
+				<thead style="text-align: center">
+					<tr>
+						<th colspan="4">Einzelflasche + Aromenanteile</th>
+					</tr>
+				</thead>
+				<tr>
+					<td>Aroma 1</td>
+					<td>Aroma 2</td>
+					<td>Aroma 3</td>
+					<td>Aroma 4</td>
+				</tr>
+				<tr>
+					<td><input id="aroma1" type="text" value="100" size="5" /><label for="aroma1">%:</label></td>
+					<td><input id="aroma2" type="text" value="0" size="5" /><label for="aroma2">%:</label></td>
+					<td><input id="aroma3" type="text" value="0" size="5" /><label for="aroma3">%:</label></td>
+					<td><input id="aroma4" type="text" value="0" size="5" /><label for="aroma4">%:</label></td>
+				</tr>
+				<tr class="eingabezeile">
+					<td colspan="2"><input id="Einzelmenge" type="text" size="5" /><label for="Einzelmenge">ml Einzelflasche</label></td>
+					<td colspan="2" style="text-align: right"><input id="rechnen_einzel" type="submit" value="jetzt berechnen" /></td>
+				</tr>
+			</table>
+			<table class="tabellen" id="ausgabe_einzeln">
+				<thead>
+					<tr>
+						<th>Nullerbase</th>
+						<th>Nic.base</th>
+						<th>Aroma ges.</th>
+						<th>Aroma 1</th>
+						<th>Aroma 2</th>
+						<th>Aroma 3</th>
+						<th>Aroma 4</th>
+					</tr>
+				</thead>
+				<tr class="ergebniszeile">
+					<td id="einzel_null">-</td>
+					<td id="einzel_nico">-</td>
+					<td id="einzel_arom">-</td>
+					<td id="aroma1_ml">-</td>
+					<td id="aroma2_ml">-</td>
+					<td id="aroma3_ml">-</td>
+					<td id="aroma4_ml">-</td>
+				</tr>
+			</table>
 		</form>
-
-		<table>
-			<tr>
-				<td>Flasche Nullerbase:</td> <td>Flasche Nicotinbase:</td> <td>Flasche Aroma:</td>
-			</tr>
-			<tr>
-				<td id="einzel_null"></td> <td id="einzel_nico"></td>	<td id="einzel_arom"></td>
-			</tr>
-		</table>
-
-		<table>
-			<tr>
-				<td id="aroma1_ml"></td>
-				<td id="aroma2_ml"></td>
-				<td id="aroma3_ml"></td>
-				<td id="aroma4_ml"></td>
-			</tr>
-		</table>
-
 
 	</body>
 </html>

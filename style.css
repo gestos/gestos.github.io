@@ -7,12 +7,36 @@ body {
 	width: 70%;
 	border: solid .5px;
 	padding: 15px;
-	background-color: #e3d3f2;
+	font-size: 0.85em;
+	font-family: sans;
+	margin: auto;
 }
 .tabellen thead {
 	text-align: left;
 }
 
-#ergebniszeile {
+.color1 {
+	background-color: #e3d3f2;
+}
+.color1 thead {
+color: #806f90;
+}
+
+.color2 {
+	background-color: #43d3f2;
+}
+.color2 thead {
+	color: #294a51;
+}
+
+.ergebniszeile {
 	color: #031a6b;
 }
+.eingabezeile input {
+	background-color: lightgreen;
+}
+/*
+#ausgabe_einzeln {
+	background-color: salmon;
+}
+*/
