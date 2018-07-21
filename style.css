@@ -2,6 +2,10 @@ body {
 	background-color: #c3dbf0;
 }
 
+.klein {
+	font-size: 0.6em;
+}
+
 .tabellen {
 	table-layout: fixed;
 	width: 70%;
