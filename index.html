@@ -17,36 +17,36 @@
 				</thead>
 				<tr>
 					<td>Nullerbasis</td>
-					<td><input id="nuller_pg" type="text" value="70" size="4" /><label for="nuller_pg">% PG</label> </td>
-					<td><input id="nuller_vg" type="text" value="30" size="4" /><label for="nuller_vg">% VG</label>	</td>
-					<td><input id="nuller_h2o" type="text" value="0" size="4" /><label for="nuller_h2o">% H2O/Alk</label> </td>
-					<td><input id="nuller_nic" type="text" value="0" size="4" /><label for="nuller_nic">mg Nic./ml</label> </td>
+					<td><input id="nuller_pg" type="number" value="70"  /><label for="nuller_pg">% PG</label> </td>
+					<td><input id="nuller_vg" type="number" value="30"  /><label for="nuller_vg">% VG</label>	</td>
+					<td><input id="nuller_h2o" type="number" value="0"  /><label for="nuller_h2o">% H2O/Alk</label> </td>
+					<td><input id="nuller_nic" type="number" value="0"  /><label for="nuller_nic">mg Nic./ml</label> </td>
 				</tr>
 				<tr>
 					<td>Nikotinbasis</td>
-					<td><input id="nicbase_pg" type="text" value="50" size="4" /><label for="nicbase_pg">% PG</label></td>
-					<td><input id="nicbase_vg" type="text" value="50" size="4" /><label for="nicbase_vg">% VG</label></td>
-					<td><input id="nicbase_h2o" type="text" value="0" size="4" /><label for="nicbase_h2o">% H2O/Alk</label> </td>
-					<td><input id="nicbase_nic" type="text" value="40" size="4" /><label for="nicbase_nic">mg Nic./ml</label></td>
+					<td><input id="nicbase_pg" type="number" value="50"  /><label for="nicbase_pg">% PG</label></td>
+					<td><input id="nicbase_vg" type="number" value="50"  /><label for="nicbase_vg">% VG</label></td>
+					<td><input id="nicbase_h2o" type="number" value="0"  /><label for="nicbase_h2o">% H2O/Alk</label> </td>
+					<td><input id="nicbase_nic" type="number" value="40"  /><label for="nicbase_nic">mg Nic./ml</label></td>
 				</tr>
 				<tr>
 					<td>Aroma</td>
-					<td><input id="aromaprozent" type="text" value="4" size="4" /><label for="aromaprozent">%</label></td>
-					<td><input id="aroma_pg" type="text" value="100" size="4" /><label for="aroma_pg">% PG</label></td>
-					<td><input id="aroma_vg" type="text" value="0" size="4" /><label for="aroma_vg">% VG</label></td>
-					<td><input id="aroma_h2o" type="text" value="0" size="4" /><label for="aroma_h2o">% H2O/Alk</label></td>
+					<td><input id="aromaprozent" type="number" value="4"  /><label for="aromaprozent">%</label></td>
+					<td><input id="aroma_pg" type="number" value="100"  /><label for="aroma_pg">% PG</label></td>
+					<td><input id="aroma_vg" type="number" value="0"  /><label for="aroma_vg">% VG</label></td>
+					<td><input id="aroma_h2o" type="number" value="0"  /><label for="aroma_h2o">% H2O/Alk</label></td>
 				</tr>
 				<tr>
 					<td>Zusätze <span class="klein">(Süße/Menthol/Wasser)</span></td>
-					<td><input id="zu_prozent" type="text" value="0" size="4" /><label for="zu_prozent">%</label></td>
-					<td><input id="zu_pg" type="text" value="0" size="4" /><label for="zu_pg">% PG</label></td>
-					<td><input id="zu_vg" type="text" value="0" size="4" /><label for="zu_vg">% VG</label></td>
-					<td><input id="zu_h2o" type="text" value="0" size="4" /><label for="zu_h2o">% H2O/Alk</label></td>
+					<td><input id="zu_prozent" type="number" value="0"  /><label for="zu_prozent">%</label></td>
+					<td><input id="zu_pg" type="number" value="0"  /><label for="zu_pg">% PG</label></td>
+					<td><input id="zu_vg" type="number" value="0"  /><label for="zu_vg">% VG</label></td>
+					<td><input id="zu_h2o" type="number" value="0"  /><label for="zu_h2o">% H2O/Alk</label></td>
 				</tr>
 				<tr class="eingabezeile">
 					<td>Gesamtmenge</td>
-					<td><input id="Gesamtmenge" type="text" value="500" size="4" /><label for="Gesamtmenge">ml</label></td>
-					<td><input id="sollnic" type="text" value="3" size="4" /><label for="sollnic">mg/ml Nic.</label></td>
+					<td><input id="Gesamtmenge" type="number" value="500"  /><label for="Gesamtmenge">ml</label></td>
+					<td><input id="sollnic" type="number" value="3"  /><label for="sollnic">mg/ml Nic.</label></td>
 					<td colspan="2" style="text-align: right"><input id="rechnen" type="submit" value="jetzt berechnen" /></td>
 				</tr>
 			</table>
@@ -77,13 +77,13 @@
 					<td>Aroma 4</td>
 				</tr>
 				<tr>
-					<td><input id="aroma1" type="text" value="100" size="4" /><label for="aroma1">%</label></td>
-					<td><input id="aroma2" type="text" value="0" size="4" /><label for="aroma2">%</label></td>
-					<td><input id="aroma3" type="text" value="0" size="4" /><label for="aroma3">%</label></td>
-					<td><input id="aroma4" type="text" value="0" size="4" /><label for="aroma4">%</label></td>
+					<td><input id="aroma1" type="number" value="100"  /><label for="aroma1">%</label></td>
+					<td><input id="aroma2" type="number" value="0"  /><label for="aroma2">%</label></td>
+					<td><input id="aroma3" type="number" value="0"  /><label for="aroma3">%</label></td>
+					<td><input id="aroma4" type="number" value="0"  /><label for="aroma4">%</label></td>
 				</tr>
 				<tr class="eingabezeile">
-					<td colspan="2"><input id="Einzelmenge" type="text" size="4" /><label for="Einzelmenge">ml Einzelflasche</label></td>
+					<td colspan="2"><input id="Einzelmenge" type="number"  /><label for="Einzelmenge">ml Einzelflasche</label></td>
 					<td colspan="2" style="text-align: right"><input id="rechnen_einzel" type="submit" value="jetzt berechnen" /></td>
 				</tr>
 			</table>

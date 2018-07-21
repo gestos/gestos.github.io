@@ -81,10 +81,10 @@ calculate_overall = function() {
 	var ml = getmls();
 	var pc = getpct();
 
-	document.getElementById('nulbase_ml').innerHTML = ml.nul+' ml';
-	document.getElementById('nicbase_ml').innerHTML = ml.nic+' ml';
-	document.getElementById('aroma_ml').innerHTML = ml.aro+' ml';
-	document.getElementById('zusatz_ml').innerHTML = ml.zus+' ml';
+	document.getElementById('nulbase_ml').innerHTML = ml.nul.toFixed(2)+' ml';
+	document.getElementById('nicbase_ml').innerHTML = ml.nic.toFixed(2)+' ml';
+	document.getElementById('aroma_ml').innerHTML = ml.aro.toFixed(2)+' ml';
+	document.getElementById('zusatz_ml').innerHTML = ml.zus.toFixed(2)+' ml';
 
 	document.getElementById('end_pg').innerHTML = pc.pg.toFixed(2)+' %';
 	document.getElementById('end_vg').innerHTML = pc.vg.toFixed(2)+' %';
